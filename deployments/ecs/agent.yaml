@@ -34,7 +34,7 @@ observers:
       com.amazonaws.ecs.task-arn: ecs_task_arn
       com.amazonaws.ecs.task-definition-family: ecs_task_group
       com.amazonaws.ecs.task-definition-version: ecs_task_version
-
+  - type: ecs
 monitors:
   - type: cpu
   - type: filesystems
@@ -46,6 +46,9 @@ monitors:
   - type: host-metadata
   - type: processlist
   - type: vmem
+  - type: collectd/kong
+    discoveryRule: container_image =~ “350128884696.dkr.ecr.us-east-1.amazonaws.com/alpha_kong-repository:simon-kong-active” && port == 8445
+    intervalSeconds: 10
 
   - type: docker-container-stats
     labelsToDimensions:

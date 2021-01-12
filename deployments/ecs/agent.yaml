@@ -47,7 +47,7 @@ monitors:
   - type: processlist
   - type: vmem
   - type: collectd/kong
-    discoveryRule: container_image =~ “350128884696.dkr.ecr.us-east-1.amazonaws.com/alpha_kong-repository:simon-kong-active” && port == 8443
+    discoveryRule: container_image =~ “350128884696.dkr.ecr.us-east-1.amazonaws.com/alpha_kong-repository:simon-kong-active” && port == 443
     intervalSeconds: 10
 
   - type: docker-container-stats

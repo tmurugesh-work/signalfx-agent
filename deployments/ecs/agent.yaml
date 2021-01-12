@@ -47,7 +47,7 @@ monitors:
   - type: processlist
   - type: vmem
   - type: collectd/kong
-    discoveryRule: container_image =~ “kong” && port == 443
+    discoveryRule: container_image =~ “simon-kong-activee” && port == 8444
     intervalSeconds: 10
 
   - type: docker-container-stats

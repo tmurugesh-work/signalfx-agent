@@ -47,7 +47,6 @@ monitors:
   - type: processlist
   - type: vmem
   - type: collectd/kong
-  - type: collectd/kong
     discoveryRule: container_image =~ "kong" && port == 8443
     intervalSeconds: 10
       

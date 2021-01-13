@@ -46,6 +46,7 @@ monitors:
   - type: host-metadata
   - type: processlist
   - type: vmem
+  - type: ecs-metadata
   - type: collectd/kong
     discoveryRule: container_image =~ "kong" && port == 8443
     intervalSeconds: 10

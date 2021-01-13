@@ -10,7 +10,7 @@ traceEndpointUrl: {"#from": "env:TRACE_ENDPOINT_URL", optional: true}
 intervalSeconds: {"#from": "env:INTERVAL_SECONDS", default: 10}
 
 logging:
-  level: {"#from": "env:LOG_LEVEL", default: "info"}
+  level: {"#from": "env:LOG_LEVEL", default: "debug"}
 
 etcPath: /hostfs/etc
 procPath: /hostfs/proc
@@ -46,7 +46,6 @@ monitors:
   - type: host-metadata
   - type: processlist
   - type: vmem
-  - type: ecs-metadata
   - type: collectd/kong
     discoveryRule: container_image =~ "kong" && port == 8443
     intervalSeconds: 10

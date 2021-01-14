@@ -47,8 +47,11 @@ monitors:
   - type: processlist
   - type: vmem
   - type: collectd/kong
-    discoveryRule: container_image =~ "kong" && port == 8443
-    intervalSeconds: 10
+    discoveryRule: container_image =~ "kong" && port == 8444
+    url: https://{{.Host}}:{{.Port}}/status
+    authHeader:
+      header: kong-admin-token
+      value: status-monitor-alpha1
       
 
   - type: docker-container-stats

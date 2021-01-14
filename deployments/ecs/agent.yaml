@@ -48,7 +48,7 @@ monitors:
   - type: vmem
   - type: collectd/kong
     discoveryRule: container_image =~ "kong" && port == 8444
-    url: https://{{.Host}}:{{.Port}}/status
+    url: https://172.17.0.2:8444/status
     authHeader:
       header: kong-admin-token
       value: status-monitor-alpha1

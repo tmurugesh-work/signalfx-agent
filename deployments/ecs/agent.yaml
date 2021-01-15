@@ -34,7 +34,6 @@ observers:
       com.amazonaws.ecs.task-arn: ecs_task_arn
       com.amazonaws.ecs.task-definition-family: ecs_task_group
       com.amazonaws.ecs.task-definition-version: ecs_task_version
-  - type: ecs
 monitors:
   - type: cpu
   - type: filesystems
@@ -48,7 +47,7 @@ monitors:
   - type: vmem
   - type: collectd/kong
     discoveryRule: container_image =~ "kong" && port == 8444
-    url: https://{{.Host}}:{{.Port}}/status
+    url: https://{{.Host}}:{{.Port}}/signalfx
     authHeader:
       header: kong-admin-token
       value: status-monitor-alpha1

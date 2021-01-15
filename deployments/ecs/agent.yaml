@@ -51,7 +51,7 @@ monitors:
     authHeader:
       header: kong-admin-token
       value: status-monitor-alpha1
-      
+    verifyCerts: false
 
   - type: docker-container-stats
     labelsToDimensions:

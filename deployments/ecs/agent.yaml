@@ -25,7 +25,7 @@ observers:
   - type: docker
     # ECS tasks running the awsvpc network mode don't actually expose and IP
     # address on the docker inspect API so we need to use the hostname instead.
-    useHostnameIfPresent: true
+    useHostnameIfPresent: false
     labelsToDimensions: &labelMap
       # We map the cluster label to ClusterName to match what our AWS
       # CloudWatch integration uses.
@@ -48,7 +48,7 @@ monitors:
   - type: vmem
   - type: collectd/kong
     discoveryRule: container_image =~ "kong" && port == 8444
-    url: https://172.17.0.2:8444/status
+    url: https://{{.Host}}:{{.Port}}/status
     authHeader:
       header: kong-admin-token
       value: status-monitor-alpha1

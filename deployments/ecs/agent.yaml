@@ -48,7 +48,7 @@ monitors:
   
   - type: mongodb-atlas
     projectID:  5e42c7e6f2a30ba33bd0ab9f
-    publicKey:  hyhprwry
+    publicKey:  HYHPRWRY
     privateKey: dc2ebbad-6c44-4154-afcc-cb54a9258b42
     disableHostDimensions: true  
     

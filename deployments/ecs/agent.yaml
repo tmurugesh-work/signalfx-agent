@@ -10,7 +10,7 @@ traceEndpointUrl: {"#from": "env:TRACE_ENDPOINT_URL", optional: true}
 intervalSeconds: {"#from": "env:INTERVAL_SECONDS", default: 10}
 
 logging:
-  level: {"#from": "env:LOG_LEVEL", default: "debug"}
+  level: {"#from": "env:LOG_LEVEL", default: "info"}
 
 etcPath: /hostfs/etc
 procPath: /hostfs/proc
@@ -47,10 +47,10 @@ monitors:
   - type: vmem
   
   - type: mongodb-atlas
-    projectID:  5e42c7e6f2a30ba33bd0ab9f
-    publicKey:  HYHPRWRY
+    projectID: 5e42c7e6f2a30ba33bd0ab9f
+    publicKey: HYHPRWRY
     privateKey: dc2ebbad-6c44-4154-afcc-cb54a9258b42
-    disableHostDimensions: true  
+    disableHostDimensions: true
     
   - type: collectd/kong
     discoveryRule: container_image =~ "kong" && port == 8444

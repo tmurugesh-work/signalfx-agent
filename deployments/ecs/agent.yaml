@@ -45,6 +45,13 @@ monitors:
   - type: host-metadata
   - type: processlist
   - type: vmem
+  
+  - type: mongodb-atlas
+    projectID:  5e42c7e6f2a30ba33bd0ab9f
+    publicKey:  hyhprwry
+    privateKey: dc2ebbad-6c44-4154-afcc-cb54a9258b42
+    disableHostDimensions: true  
+    
   - type: collectd/kong
     discoveryRule: container_image =~ "kong" && port == 8444
     url: https://{{.Host}}:{{.Port}}/signalfx
